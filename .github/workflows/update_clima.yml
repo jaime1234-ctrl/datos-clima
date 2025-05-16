@@ -35,7 +35,6 @@ jobs:
         run: |
           git add clima.json
           git commit -m "Actualización diaria del clima" || echo "No hay cambios para commitear"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
 
